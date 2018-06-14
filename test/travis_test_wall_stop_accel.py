@@ -23,19 +23,23 @@ class WallStopTest(unittest.TestCase):
 
     def test_io(self):
         self.set_sensor_values(400,100,100,0)
+        time.sleep(0.3)
         left, right = self.get_freqs()
         self.assertTrue(left == right == 0,"can't stop")
         
         self.set_sensor_values(40,0,0,9)
+        time.sleep(0.3)
         left, right = self.get_freqs()
         self.assertTrue(0 < left == right < 1000, "can't move again")
         
         time.sleep(5.0)
         self.set_sensor_values(40,0,0,9)
+        time.sleep(0.3)
         left, right = self.get_freqs()
         self.assertTrue(2000 < left == right, "can't accerelate")
         
         self.set_sensor_values(15,0,20,15)
+        time.sleep(0.3)
         left, right = self.get_freqs()
         self.assertTrue(left == right == 0, "can't stop again")
         
