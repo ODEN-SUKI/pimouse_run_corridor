@@ -22,17 +22,17 @@ class WallStopTest(unittest.TestCase):
         return left,right
 
     def test_io(self):
-        left, right = self.set_and_get(400,100,100,0)
+        self.set_and_get(400,100,100,0)
         self.assertTrue(left == right == 0,"can't stop")
         
-        left, right = self.set_and_get(40,0,0,9)
+        self.set_and_get(40,0,0,9)
         self.assertTrue(0 < left == right < 1000, "can't move again")
         
         time.sleep(5.0)
-        left, right = self.set_and_get(40,0,0,9)
+        self.set_and_get(40,0,0,9)
         self.assertTrue(2000 < left == right, "can't accerelate")
         
-        left, right =self.set_and_get(15,0,20,15)
+        self.set_and_get(15,0,20,15)
         self.assertTrue(left == right == 0, "can't stop again")
         
         
