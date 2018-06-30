@@ -39,7 +39,7 @@ class WallStopTest(unittest.TestCase):
         self.assertTrue(2000 < left == right, "can't accerelate")
         
         self.set_sensor_values(15,0,20,15)
-        time.sleep(0.3)
+        time.sleep(5.0)
         left, right = self.get_freqs()
         self.assertTrue(left == right == 0, "can't stop again")
         
